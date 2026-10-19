@@ -1,0 +1,166 @@
+{
+  "evidence": "AUTH-050",
+  "origin": "All credentials,identities,sessions,UA,date and nonce are deliberately public synthetic test data;never send these vectors",
+  "vectors": [
+    {
+      "name": "fresh_password_no_session",
+      "role": "fresh_password",
+      "syntheticCredentialText": "SYNTHETIC-PUBLIC-TEST-TEXT",
+      "keyTextLowerHex": "2576b16635aa0bf5fd2119e78eb5108a",
+      "method": "POST",
+      "path": "/pcs/v1/user.account.GetToken",
+      "bodyUtf8": "{\"data\":{\"gpsInfo\":{\"latitude\":0,\"longitude\":0}}}",
+      "contentType": "application/json; charset=utf-8",
+      "contentMd5Base64": "hRVNUXzdsEFutUpLuoe48A==",
+      "signedFields": {
+        "x-pcs-apiver": "191204",
+        "x-pcs-client-ua": "eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==",
+        "x-pcs-date": "2000-01-01T00:00:00Z",
+        "x-pcs-nonce": "synthetic-nonce-only",
+        "x-pcs-username": "account\\synthetic@example.invalid"
+      },
+      "session": null,
+      "sessionLineIncluded": false,
+      "canonicalUtf8": "POST\n/pcs/v1/user.account.GetToken\nhRVNUXzdsEFutUpLuoe48A==\napplication/json; charset=utf-8\nx-pcs-apiver:191204\nx-pcs-client-ua:eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==\nx-pcs-date:2000-01-01T00:00:00Z\nx-pcs-nonce:synthetic-nonce-only\nx-pcs-username:account\\synthetic@example.invalid\n",
+      "canonicalUtf8Base64": "UE9TVAovcGNzL3YxL3VzZXIuYWNjb3VudC5HZXRUb2tlbgpoUlZOVVh6ZHNFRnV0VXBMdW9lNDhBPT0KYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOAp4LXBjcy1hcGl2ZXI6MTkxMjA0CngtcGNzLWNsaWVudC11YTpleUpqYkdsbGJuUlVlWEJsSWpvaWNHaHZibVVpTENKMFpYSnRhVzVoYkVsa0lqb2ljM2x1ZEdobGRHbGpMWFJsY20xcGJtRnNMVzl1YkhraUxDSjBkR2xrSWpvaWMzbHVkR2hsZEdsakxYUjBhV1F0YjI1c2VTSXNJblJsY20xcGJtRnNUbUZ0WlNJNkluTjViblJvWlhScFl5Qmh3NmZEbzI4aWZRPT0KeC1wY3MtZGF0ZToyMDAwLTAxLTAxVDAwOjAwOjAwWgp4LXBjcy1ub25jZTpzeW50aGV0aWMtbm9uY2Utb25seQp4LXBjcy11c2VybmFtZTphY2NvdW50XHN5bnRoZXRpY0BleGFtcGxlLmludmFsaWQK",
+      "signatureBase64": "Fcc4uBMQkpkTvrlVu0nnMTqrvW21EBkBxA7tazKx2AE="
+    },
+    {
+      "name": "token_login_no_session",
+      "role": "token",
+      "syntheticCredentialText": "SYNTHETIC-PUBLIC-TEST-TEXT",
+      "keyTextLowerHex": "6ef0a1da7df1b09939214606c8b2547a",
+      "method": "POST",
+      "path": "/pcs/v1/user.account.Login",
+      "bodyUtf8": "{\"data\":{\"timezoneOffset\":0}}",
+      "contentType": "application/json; charset=utf-8",
+      "contentMd5Base64": "7AcGfvG0SYT/cZlsNcdc6g==",
+      "signedFields": {
+        "x-pcs-apiver": "191204",
+        "x-pcs-client-ua": "eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==",
+        "x-pcs-date": "2000-01-01T00:00:00Z",
+        "x-pcs-nonce": "synthetic-nonce-only",
+        "x-pcs-username": "uuid\\synthetic-returned"
+      },
+      "session": null,
+      "sessionLineIncluded": false,
+      "canonicalUtf8": "POST\n/pcs/v1/user.account.Login\n7AcGfvG0SYT/cZlsNcdc6g==\napplication/json; charset=utf-8\nx-pcs-apiver:191204\nx-pcs-client-ua:eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==\nx-pcs-date:2000-01-01T00:00:00Z\nx-pcs-nonce:synthetic-nonce-only\nx-pcs-username:uuid\\synthetic-returned\n",
+      "canonicalUtf8Base64": "UE9TVAovcGNzL3YxL3VzZXIuYWNjb3VudC5Mb2dpbgo3QWNHZnZHMFNZVC9jWmxzTmNkYzZnPT0KYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOAp4LXBjcy1hcGl2ZXI6MTkxMjA0CngtcGNzLWNsaWVudC11YTpleUpqYkdsbGJuUlVlWEJsSWpvaWNHaHZibVVpTENKMFpYSnRhVzVoYkVsa0lqb2ljM2x1ZEdobGRHbGpMWFJsY20xcGJtRnNMVzl1YkhraUxDSjBkR2xrSWpvaWMzbHVkR2hsZEdsakxYUjBhV1F0YjI1c2VTSXNJblJsY20xcGJtRnNUbUZ0WlNJNkluTjViblJvWlhScFl5Qmh3NmZEbzI4aWZRPT0KeC1wY3MtZGF0ZToyMDAwLTAxLTAxVDAwOjAwOjAwWgp4LXBjcy1ub25jZTpzeW50aGV0aWMtbm9uY2Utb25seQp4LXBjcy11c2VybmFtZTp1dWlkXHN5bnRoZXRpYy1yZXR1cm5lZAo=",
+      "signatureBase64": "7ywOrsWaccDWKT8ZT9E7X2V76XiYM8UC5PplNM+jiOY="
+    },
+    {
+      "name": "token_login_empty_session",
+      "role": "token",
+      "syntheticCredentialText": "SYNTHETIC-PUBLIC-TEST-TEXT",
+      "keyTextLowerHex": "6ef0a1da7df1b09939214606c8b2547a",
+      "method": "POST",
+      "path": "/pcs/v1/user.account.Login",
+      "bodyUtf8": "{\"data\":{\"timezoneOffset\":0}}",
+      "contentType": "application/json; charset=utf-8",
+      "contentMd5Base64": "7AcGfvG0SYT/cZlsNcdc6g==",
+      "signedFields": {
+        "x-pcs-apiver": "191204",
+        "x-pcs-client-ua": "eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==",
+        "x-pcs-date": "2000-01-01T00:00:00Z",
+        "x-pcs-nonce": "synthetic-nonce-only",
+        "x-pcs-username": "uuid\\synthetic-returned"
+      },
+      "session": "",
+      "sessionLineIncluded": true,
+      "canonicalUtf8": "POST\n/pcs/v1/user.account.Login\n7AcGfvG0SYT/cZlsNcdc6g==\napplication/json; charset=utf-8\nx-pcs-apiver:191204\nx-pcs-client-ua:eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==\nx-pcs-date:2000-01-01T00:00:00Z\nx-pcs-nonce:synthetic-nonce-only\nx-pcs-session-id:\nx-pcs-username:uuid\\synthetic-returned\n",
+      "canonicalUtf8Base64": "UE9TVAovcGNzL3YxL3VzZXIuYWNjb3VudC5Mb2dpbgo3QWNHZnZHMFNZVC9jWmxzTmNkYzZnPT0KYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOAp4LXBjcy1hcGl2ZXI6MTkxMjA0CngtcGNzLWNsaWVudC11YTpleUpqYkdsbGJuUlVlWEJsSWpvaWNHaHZibVVpTENKMFpYSnRhVzVoYkVsa0lqb2ljM2x1ZEdobGRHbGpMWFJsY20xcGJtRnNMVzl1YkhraUxDSjBkR2xrSWpvaWMzbHVkR2hsZEdsakxYUjBhV1F0YjI1c2VTSXNJblJsY20xcGJtRnNUbUZ0WlNJNkluTjViblJvWlhScFl5Qmh3NmZEbzI4aWZRPT0KeC1wY3MtZGF0ZToyMDAwLTAxLTAxVDAwOjAwOjAwWgp4LXBjcy1ub25jZTpzeW50aGV0aWMtbm9uY2Utb25seQp4LXBjcy1zZXNzaW9uLWlkOgp4LXBjcy11c2VybmFtZTp1dWlkXHN5bnRoZXRpYy1yZXR1cm5lZAo=",
+      "signatureBase64": "hK/wRZDjhHXvaCpXuFmqBomKL8KphXGhUJ0l8HNW0bA="
+    },
+    {
+      "name": "token_login_present_session",
+      "role": "token",
+      "syntheticCredentialText": "SYNTHETIC-PUBLIC-TEST-TEXT",
+      "keyTextLowerHex": "6ef0a1da7df1b09939214606c8b2547a",
+      "method": "POST",
+      "path": "/pcs/v1/user.account.Login",
+      "bodyUtf8": "{\"data\":{\"timezoneOffset\":0}}",
+      "contentType": "application/json; charset=utf-8",
+      "contentMd5Base64": "7AcGfvG0SYT/cZlsNcdc6g==",
+      "signedFields": {
+        "x-pcs-apiver": "191204",
+        "x-pcs-client-ua": "eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==",
+        "x-pcs-date": "2000-01-01T00:00:00Z",
+        "x-pcs-nonce": "synthetic-nonce-only",
+        "x-pcs-username": "uuid\\synthetic-returned"
+      },
+      "session": "synthetic-session-only",
+      "sessionLineIncluded": true,
+      "canonicalUtf8": "POST\n/pcs/v1/user.account.Login\n7AcGfvG0SYT/cZlsNcdc6g==\napplication/json; charset=utf-8\nx-pcs-apiver:191204\nx-pcs-client-ua:eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==\nx-pcs-date:2000-01-01T00:00:00Z\nx-pcs-nonce:synthetic-nonce-only\nx-pcs-session-id:synthetic-session-only\nx-pcs-username:uuid\\synthetic-returned\n",
+      "canonicalUtf8Base64": "UE9TVAovcGNzL3YxL3VzZXIuYWNjb3VudC5Mb2dpbgo3QWNHZnZHMFNZVC9jWmxzTmNkYzZnPT0KYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOAp4LXBjcy1hcGl2ZXI6MTkxMjA0CngtcGNzLWNsaWVudC11YTpleUpqYkdsbGJuUlVlWEJsSWpvaWNHaHZibVVpTENKMFpYSnRhVzVoYkVsa0lqb2ljM2x1ZEdobGRHbGpMWFJsY20xcGJtRnNMVzl1YkhraUxDSjBkR2xrSWpvaWMzbHVkR2hsZEdsakxYUjBhV1F0YjI1c2VTSXNJblJsY20xcGJtRnNUbUZ0WlNJNkluTjViblJvWlhScFl5Qmh3NmZEbzI4aWZRPT0KeC1wY3MtZGF0ZToyMDAwLTAxLTAxVDAwOjAwOjAwWgp4LXBjcy1ub25jZTpzeW50aGV0aWMtbm9uY2Utb25seQp4LXBjcy1zZXNzaW9uLWlkOnN5bnRoZXRpYy1zZXNzaW9uLW9ubHkKeC1wY3MtdXNlcm5hbWU6dXVpZFxzeW50aGV0aWMtcmV0dXJuZWQK",
+      "signatureBase64": "aew0RIhfz4EyvaD/BNo7pIph+Gl1kESO9EOVYd6kAQQ="
+    },
+    {
+      "name": "legacy_code_request_shape_only",
+      "role": "token",
+      "syntheticCredentialText": "SYNTHETIC-PUBLIC-TEST-TEXT",
+      "keyTextLowerHex": "6ef0a1da7df1b09939214606c8b2547a",
+      "method": "POST",
+      "path": "/pcs/v1/common.validcode.GetValidCode",
+      "bodyUtf8": "{\"data\":{\"account\":\"synthetic@example.invalid\",\"type\":\"email\",\"usage\":\"CheckTwoStepVerify\"}}",
+      "contentType": "application/json",
+      "contentMd5Base64": "WxRVmeFiF5oI68br96EfYg==",
+      "signedFields": {
+        "x-pcs-apiver": "61452",
+        "x-pcs-client-ua": "eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==",
+        "x-pcs-date": "2000-01-01T00:00:00Z",
+        "x-pcs-nonce": "synthetic-nonce-only",
+        "x-pcs-username": "uuid\\synthetic-returned"
+      },
+      "session": null,
+      "sessionLineIncluded": false,
+      "canonicalUtf8": "POST\n/pcs/v1/common.validcode.GetValidCode\nWxRVmeFiF5oI68br96EfYg==\napplication/json\nx-pcs-apiver:61452\nx-pcs-client-ua:eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==\nx-pcs-date:2000-01-01T00:00:00Z\nx-pcs-nonce:synthetic-nonce-only\nx-pcs-username:uuid\\synthetic-returned\n",
+      "canonicalUtf8Base64": "UE9TVAovcGNzL3YxL2NvbW1vbi52YWxpZGNvZGUuR2V0VmFsaWRDb2RlCld4UlZtZUZpRjVvSTY4YnI5NkVmWWc9PQphcHBsaWNhdGlvbi9qc29uCngtcGNzLWFwaXZlcjo2MTQ1Mgp4LXBjcy1jbGllbnQtdWE6ZXlKamJHbGxiblJVZVhCbElqb2ljR2h2Ym1VaUxDSjBaWEp0YVc1aGJFbGtJam9pYzNsdWRHaGxkR2xqTFhSbGNtMXBibUZzTFc5dWJIa2lMQ0owZEdsa0lqb2ljM2x1ZEdobGRHbGpMWFIwYVdRdGIyNXNlU0lzSW5SbGNtMXBibUZzVG1GdFpTSTZJbk41Ym5Sb1pYUnBZeUJodzZmRG8yOGlmUT09CngtcGNzLWRhdGU6MjAwMC0wMS0wMVQwMDowMDowMFoKeC1wY3Mtbm9uY2U6c3ludGhldGljLW5vbmNlLW9ubHkKeC1wY3MtdXNlcm5hbWU6dXVpZFxzeW50aGV0aWMtcmV0dXJuZWQK",
+      "signatureBase64": "RLHHFLQwlRCU/NcGp2Q749YBAl/CryUqcW79R7AGsac="
+    },
+    {
+      "name": "utf8_canonical_principal_and_body",
+      "role": "token",
+      "syntheticCredentialText": "SYNTHETIC-PUBLIC-TEST-TEXT",
+      "keyTextLowerHex": "6ef0a1da7df1b09939214606c8b2547a",
+      "method": "POST",
+      "path": "/pcs/v1/synthetic.Utf8Fixture",
+      "bodyUtf8": "{\"data\":{\"label\":\"ação\"}}",
+      "contentType": "application/json; charset=utf-8",
+      "contentMd5Base64": "IGPVAcqa3hnQ4r8YMvLGZg==",
+      "signedFields": {
+        "x-pcs-apiver": "191204",
+        "x-pcs-client-ua": "eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==",
+        "x-pcs-date": "2000-01-01T00:00:00Z",
+        "x-pcs-nonce": "synthetic-nonce-only",
+        "x-pcs-username": "uuid\\synthetic-ação"
+      },
+      "session": null,
+      "sessionLineIncluded": false,
+      "canonicalUtf8": "POST\n/pcs/v1/synthetic.Utf8Fixture\nIGPVAcqa3hnQ4r8YMvLGZg==\napplication/json; charset=utf-8\nx-pcs-apiver:191204\nx-pcs-client-ua:eyJjbGllbnRUeXBlIjoicGhvbmUiLCJ0ZXJtaW5hbElkIjoic3ludGhldGljLXRlcm1pbmFsLW9ubHkiLCJ0dGlkIjoic3ludGhldGljLXR0aWQtb25seSIsInRlcm1pbmFsTmFtZSI6InN5bnRoZXRpYyBhw6fDo28ifQ==\nx-pcs-date:2000-01-01T00:00:00Z\nx-pcs-nonce:synthetic-nonce-only\nx-pcs-username:uuid\\synthetic-ação\n",
+      "canonicalUtf8Base64": "UE9TVAovcGNzL3YxL3N5bnRoZXRpYy5VdGY4Rml4dHVyZQpJR1BWQWNxYTNoblE0cjhZTXZMR1pnPT0KYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOAp4LXBjcy1hcGl2ZXI6MTkxMjA0CngtcGNzLWNsaWVudC11YTpleUpqYkdsbGJuUlVlWEJsSWpvaWNHaHZibVVpTENKMFpYSnRhVzVoYkVsa0lqb2ljM2x1ZEdobGRHbGpMWFJsY20xcGJtRnNMVzl1YkhraUxDSjBkR2xrSWpvaWMzbHVkR2hsZEdsakxYUjBhV1F0YjI1c2VTSXNJblJsY20xcGJtRnNUbUZ0WlNJNkluTjViblJvWlhScFl5Qmh3NmZEbzI4aWZRPT0KeC1wY3MtZGF0ZToyMDAwLTAxLTAxVDAwOjAwOjAwWgp4LXBjcy1ub25jZTpzeW50aGV0aWMtbm9uY2Utb25seQp4LXBjcy11c2VybmFtZTp1dWlkXHN5bnRoZXRpYy1hw6fDo28K",
+      "signatureBase64": "iR4L2KcKYQP8VSDQVTxdCu8DmopIKfHgfe6CuJXFyKQ="
+    }
+  ],
+  "keyRules": {
+    "fresh_password": "ASCII lowercasehex MD5(ASCII lowercasehex MD5(UTF8 synthetic text))",
+    "token": "ASCII lowercasehex MD5(UTF8 synthetic text)"
+  },
+  "limitations": [
+    "No network calls or terminal registration;not live replay inputs.",
+    "Canonicalization signs exact emitted bytes;no generic JSON sort/order normalization implied.",
+    "Legacy request body is a synthetic signing shape,not successful code delivery.",
+    "Non-ASCII fixture validates local byte/signature behavior only,not backend acceptance."
+  ],
+  "installedSdkParity": {
+    "accepted": true,
+    "caseCount": 6,
+    "allSignaturesMatch": true,
+    "defaultCharset": "UTF-8",
+    "apkHashMatchesBaseline": true,
+    "separateProcess": true,
+    "proprietaryClassesLoadedForReference": true,
+    "networkMethodsInvoked": false,
+    "globalAuthOrClockSettersInvoked": false,
+    "accountOrDeviceValuesRead": false
+  }
+}

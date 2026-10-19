@@ -1,0 +1,69 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mibo-py"
+version = "0.1.0"
+description = "Unofficial, independent Mibo protocol proof of concept for authorized accounts and raw camera streams"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{name = "Jojo"}]
+dependencies = ["cryptography>=48,<51"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Repository = "https://github.com/6a6f6a6f/mibo-py"
+
+[dependency-groups]
+dev = ["ruff>=0.14,<1", "mypy>=1.18,<3", "pytest>=8.4,<10", "pytest-cov>=6,<8", "pip-audit>=2.9,<3"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["ALL"]
+# Mutually exclusive docstring styles and formatter conflicts only.
+ignore = ["D203", "D213", "COM812", "ISC001"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Exact wire offsets/tags stay adjacent to their protocol layouts.
+"src/mibo_py/_crypto.py" = ["PLR2004"]
+"src/mibo_py/_http.py" = ["PLR2004"]
+"src/mibo_py/_media.py" = ["PLR2004"]
+"src/mibo_py/_signaling.py" = ["PLR2004"]
+"src/mibo_py/_transport.py" = ["PLR2004"]
+"src/mibo_py/stream.py" = ["PLR2004"]
+# These cooperating lifecycle objects share package-private state, not public API.
+"src/mibo_py/client.py" = ["SLF001", "PLR2004"]
+"tests/**" = ["S101", "D", "PLR2004", "SLF001"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+disallow_any_unimported = true
+disallow_any_explicit = true
+files = ["src", "tests", "examples"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers -ra"
+testpaths = ["tests"]
+filterwarnings = ["error"]
+
+[tool.coverage.run]
+branch = true
+source = ["mibo_py"]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true
