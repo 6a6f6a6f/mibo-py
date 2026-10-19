@@ -48,13 +48,15 @@ belong to the consumer.
 
 | Model | Service-reported firmware | Python live result on 2026-10-19 |
 | --- | --- | --- |
-| Intelbras iM3B-C | `2.800.00IB01X.0.R.240927` | Passed: raw DHAV plus 75 seconds of decrypted H.264/AAC over public P2P, with explicit local close. |
+| Intelbras iM3B-C | `2.800.00IB01X.0.R.240927` | Passed on two units: raw DHAV plus separate 75-second H.264/AAC runs over public P2P and LAN, with explicit local close. |
 | Intelbras iM3-C | `2.800.00IB00N.0.R.220624` | Not established: account status was offline and initial P2P registration returned 404. No media arrived. |
 
 See the [live test report](docs/live-test-2026-10-19.md) and its
 [sanitized receipt](docs/live-test-2026-10-19.json). The iM3B-C run received 1,081
-H.264 units and 1,165 AAC units; independent H.264 header inspection reported
-640×480. The caller-held account token was revalidated by the server before
+H.264 units and 1,165 AAC units over public P2P. A separate authorized unit
+delivered 1,080 H.264 units and 1,169 AAC units over LAN for 75 seconds; see its
+[sanitized receipt](docs/live-test-2026-10-19-unit-2.json). Independent H.264
+header inspection reported 640×480 in both runs. The caller-held account token was revalidated by the server before
 fresh inventory and per-open bootstrap. Password login/2FA acceptance was not
 part of that successful media run.
 

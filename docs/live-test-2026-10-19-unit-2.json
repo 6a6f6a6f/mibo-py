@@ -1,0 +1,49 @@
+{
+  "tested_at_utc": "2026-10-19T21:39:40.597188+00:00",
+  "runtime": "CPython 3.12.15",
+  "platform": "Darwin arm64",
+  "session_server_revalidated": true,
+  "vendor_runtime_used": false,
+  "caller_lan_policy": "At most two exact camera-advertised RFC1918 hosts on the host-owned /24-/30 subnet, excluding host addresses, network, broadcast, gateway and DNS servers; no subnet scan",
+  "media_saved": false,
+  "media_played": false,
+  "results": [
+    {
+      "model": "iM3B-C",
+      "raw_accepted": true,
+      "compressed_accepted": true,
+      "firmware": "2.800.00IB01X.0.R.240927",
+      "raw_records": {
+        "video": 72,
+        "audio": 75,
+        "assist": 0,
+        "other": 0
+      },
+      "raw_bytes": 422820,
+      "raw_seconds": 5.02,
+      "raw_route": "private",
+      "raw_closed": true,
+      "compressed_units": {
+        "h264": 1080,
+        "aac": 1169
+      },
+      "compressed_bytes": {
+        "h264": 4596133,
+        "aac": 298891
+      },
+      "compressed_seconds": 75.011,
+      "compressed_route": "private",
+      "video_counter_wraps": 2,
+      "sps_pps_idr_observed": true,
+      "compressed_closed": true,
+      "independent_h264_metadata": {
+        "codec": "h264",
+        "width": 640,
+        "height": 480
+      }
+    }
+  ],
+  "sdk_source_commit": "52a016d",
+  "test_scope": "Second authorized iM3B-C unit only; iM3-C was not retried.",
+  "authentication_scope": "Existing authorized token revalidated by the server; no password/2FA bypass or code request."
+}
