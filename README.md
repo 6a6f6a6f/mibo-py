@@ -1,4 +1,15 @@
-# mibo-py
+<p align="center">
+  <a href="https://jojo.dev.br/">
+    <img src="docs/assets/jojos-shenanigans.svg" alt="Jojo's Shenanigans" width="128" height="128">
+  </a>
+</p>
+
+<h1 align="center">mibo-py</h1>
+
+<p align="center">
+  An independent protocol proof of concept by
+  <a href="https://jojo.dev.br/">Jojo's Shenanigans</a>.
+</p>
 
 An **unofficial, independent, experimental** Python proof of concept for doing
 useful work with Mibo camera protocols from the client machine. It uses `uv`
@@ -186,6 +197,19 @@ Credentials and decrypted bytes can remain in process memory. The caller is
 responsible for secrets storage, output protection, resource budgets, and any
 external decoder's security. Do not expose this client as an unauthenticated
 network service. See [SECURITY.md](SECURITY.md) and [protocol notes](docs/protocol.md).
+
+## Research
+
+This proof of concept builds on the Mibo protocol research behind Noctua by
+[Jojo's Shenanigans](https://jojo.dev.br/):
+
+1. [From APK to first frame: inside Mibo's protocol](https://jojo.dev.br/blog/mibo-apk-to-first-frame/)
+   ([Portuguese](https://jojo.dev.br/pt-br/blog/mibo-apk-to-first-frame/)).
+2. [Inside Mibo, part 2: P2P tunnels, native decoders, and the birth of Noctua](https://jojo.dev.br/blog/mibo-p2p-native-noctua/)
+   ([Portuguese](https://jojo.dev.br/pt-br/blog/mibo-p2p-native-noctua/)).
+
+The articles describe the reference research and Noctua implementation. Their
+live results do not establish live-camera acceptance of this Python port.
 
 ## License
 

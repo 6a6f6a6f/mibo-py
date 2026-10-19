@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" shape-rendering="crispEdges">
+<title>Jojo’s Shenanigans logo</title>
+<rect x="0" y="0" width="400" height="400" fill="#0a1118"/>
+<g transform="translate(72 72) scale(8.0)">
+<path xmlns="http://www.w3.org/2000/svg" d="M12 0h8v7h5v5h7v8h-7v5h-5v7h-8v-7H7v-5H0v-8h7V7h5z" fill="#eab183" />
+<path xmlns="http://www.w3.org/2000/svg" d="M12 7h8v5h5v8h-5v5h-8v-5H7v-8h5z" fill="#0a1118" />
+<path xmlns="http://www.w3.org/2000/svg" d="M13 12h6v8h-6z" fill="#99d6cb" />
+</g>
+</svg>
