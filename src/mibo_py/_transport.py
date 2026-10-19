@@ -228,12 +228,7 @@ class Transport:
             incoming = self._receive()
             if incoming is not None:
                 self._accept(incoming)
-            pending = (
-                next(iter(self._pending))
-                if len(self._pending) == 1 and 1 not in self._pending
-                else None
-            )
-            while (item := self._parser.read(pending)) is not None:
+            while (item := self._parser.read(self._pending_keepalive())) is not None:
                 if item.record:
                     if not opened:
                         fail("media-before-play")
@@ -249,6 +244,11 @@ class Transport:
                         self._completed.append(item.sequence)
                     if item.sequence == 1:
                         opened = True
+
+    def _pending_keepalive(self) -> int | None:
+        if len(self._pending) == 1 and not self._pending & {1, 3}:
+            return next(iter(self._pending))
+        return None
 
     @staticmethod
     def _check_timeout(*, opened: bool, since_start: float, since_media: float) -> None:

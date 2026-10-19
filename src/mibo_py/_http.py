@@ -61,7 +61,13 @@ class AccountHTTP:
             fail("session-rejected")
         if code != 10000:
             fail("api-rejected")
-        return obj(result.get("data", {}))
+        data_value = result.get("data")
+        if data_value is None and operation in (
+            "common.validcode.GetValidCode",
+            "user.account.GrantingCredit",
+        ):
+            return {}
+        return obj(data_value)
 
     @staticmethod
     def _request(destination: str, path: str, body: bytes, headers: dict[str, str]) -> bytes:

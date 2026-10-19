@@ -21,8 +21,11 @@ method, `/pcs/v1/<operation>`, base64 MD5 body digest, content type, then
 `x-pcs-session-id`, and `x-pcs-username`, each separated by LF, including a trailing
 LF. HMAC-SHA256 uses the ASCII lowercase MD5 hex of the credential; the account
 password variant applies one additional MD5-hex pass. Requests are then gzip
-compressed. Revisions and content types differ for email/trust routes; these
-are explicit in the implementation and golden-vector tests.
+compressed. Revisions and content types differ for email/trust and device-status routes;
+status uses revision 3421 with `application/json`. These fields are explicit in
+the implementation and regression tests. Successful code-delivery and trust-grant
+responses may omit their data object; authentication and inventory still require
+their complete response schemas.
 
 Only `app-br.easy4ipcloud.com` and `app-sp2.easy4ipcloud.com` HTTPS origins are
 accepted. There are no redirects, ambient proxies, or automatic HTTP retries.

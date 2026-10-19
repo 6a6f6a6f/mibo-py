@@ -261,7 +261,9 @@ class Session(AbstractContextManager["Session"]):
         if generation is not None and generation is not self._generation:
             fail("session-selection-binding")
 
-    def _post(self, operation: str, data: Object, *, revision: str = "191204") -> Object:
+    def _post(
+        self, operation: str, data: Object, *, revision: str = "191204", legacy: bool = False
+    ) -> Object:
         self._check()
         try:
             return self._http.post(
@@ -272,6 +274,7 @@ class Session(AbstractContextManager["Session"]):
                 self._token,
                 session=self._session_id,
                 revision=revision,
+                legacy=legacy,
             )
         except MiboError as error:
             if str(error) == "session-rejected":
@@ -349,6 +352,7 @@ class Session(AbstractContextManager["Session"]):
                 "device.list.DeviceBasicStatusGetForOpenPlatform",
                 {"deviceIds": sorted(batch)},
                 revision="3421",
+                legacy=True,
             )
             for value in rows(data.get("devices"), 64):
                 row = obj(value)

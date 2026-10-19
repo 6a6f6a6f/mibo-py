@@ -1,6 +1,7 @@
 # Copyright (c) 2026 Jojo. SPDX-License-Identifier: MIT
 """Authentication gates, identity binding, pagination, and explicit lifetime checks."""
 
+import gzip
 from collections.abc import Callable
 
 import pytest
@@ -8,7 +9,7 @@ import pytest
 from mibo_py import Challenge, Client, MiboError, Profile, Session
 from mibo_py._crypto import media_key
 from mibo_py._http import AccountHTTP
-from mibo_py._validation import Object
+from mibo_py._validation import Object, encode_json, obj, parse_json
 from tests.helpers import ANNEX_B, APPLICATION, PARAMETERS, PeerSocket, basic, configuration
 
 
@@ -307,3 +308,24 @@ def test_account_to_compressed_stream_and_stream_limit(monkeypatch: pytest.Monke
         session.close()
         assert all(item.closed for item in streams)
         assert all(sock.closed for sock in sockets)
+
+
+def test_status_uses_observed_signed_content_type(monkeypatch: pytest.MonkeyPatch) -> None:
+    requests: list[dict[str, str]] = []
+
+    def respond(_destination: str, path: str, body: bytes, headers: dict[str, str]) -> bytes:
+        requests.append(headers)
+        operation = path.removeprefix("/pcs/v1/")
+        data = obj(parse_json(gzip.decompress(body))["data"])
+        result = defaults(operation, data)
+        if operation == "device.list.DeviceBasicStatusGetForOpenPlatform":
+            result = {"devices": [{"deviceId": "synthetic", "status": "online"}]}
+        return encode_json({"code": 10000, "data": result})
+
+    monkeypatch.setattr(AccountHTTP, "_request", staticmethod(respond))
+    with Client(APPLICATION) as client:
+        session = login(client)
+        devices = session.devices(session.families()[0])
+        assert session.availability(devices) == {"synthetic": True}
+    assert requests[-1]["x-pcs-apiver"] == "3421"
+    assert requests[-1]["Content-Type"] == "application/json"

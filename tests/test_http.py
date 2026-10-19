@@ -116,3 +116,21 @@ def test_network_errors_are_sanitized(monkeypatch: pytest.MonkeyPatch) -> None:
         http.post("app-br.easy4ipcloud.com", "user.account.Login", {}, "principal", "token")
     assert error.value.__suppress_context__
     assert Connection.closed == [True]
+
+
+@pytest.mark.parametrize(
+    "operation", ["common.validcode.GetValidCode", "user.account.GrantingCredit"]
+)
+def test_void_success_does_not_require_data(
+    monkeypatch: pytest.MonkeyPatch, operation: str
+) -> None:
+    http = setup(monkeypatch, {"code": 10000, "data": None})
+    assert (
+        http.post("app-br.easy4ipcloud.com", operation, {}, "principal", "token", legacy=True) == {}
+    )
+
+
+def test_login_still_requires_a_data_object(monkeypatch: pytest.MonkeyPatch) -> None:
+    http = setup(monkeypatch, {"code": 10000, "data": None})
+    with pytest.raises(MiboError, match="invalid-object"):
+        http.post("app-br.easy4ipcloud.com", "user.account.Login", {}, "principal", "token")
