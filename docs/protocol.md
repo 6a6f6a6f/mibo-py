@@ -1,9 +1,11 @@
 # Observed protocol and ownership
 
 This describes an independent proof of concept, not a published vendor contract.
-The reference cameras were owner-identified iM3B-C and iM3-C. Only the iM3B-C
-firmware `2.800.00IB01X.0.R.240927` is recorded here. Model identification does not
-establish protocol compatibility for a different firmware or account.
+The reference playback cameras were iM3B-C. A separate iM3-C was identified in
+authorized inventory; it must not inherit those playback results. The Python
+[live test](live-test-2026-10-19.md) confirmed media for iM3B-C firmware
+`2.800.00IB01X.0.R.240927`; iM3-C reported `2.800.00IB00N.0.R.220624` but was
+offline. Model or inventory identification alone does not establish compatibility.
 
 ## Account layer
 
@@ -28,7 +30,8 @@ responses may omit their data object; authentication and inventory still require
 their complete response schemas.
 
 Only `app-br.easy4ipcloud.com` and `app-sp2.easy4ipcloud.com` HTTPS origins are
-accepted. There are no redirects, ambient proxies, or automatic HTTP retries.
+accepted, including an explicit default `:443` with an empty or root path. There
+are no redirects, ambient proxies, or automatic HTTP retries.
 Encoded and decoded bodies are each limited to one MiB. JSON nesting is bounded
 to 24; duplicate keys, invalid UTF-8, nonfinite values and incorrect scalar types
 are rejected. Service rejection `12002` invalidates that local account generation.
@@ -132,6 +135,8 @@ erase immutable Python strings/bytes or references retained by the caller.
 Frames, response bodies, credentials, addresses and identifiers are never logged.
 Errors contain fixed local codes and suppress underlying exception context.
 
-Tests use synthetic credentials and media only. They prove offline parser,
-state-machine and ownership behavior. Live Python camera behavior, other firmware,
-relay transport, codec decoders and audible playback remain unverified.
+Automated tests use synthetic credentials and media only. They prove offline
+parser, state-machine and ownership behavior. The separately authorized
+[live test](live-test-2026-10-19.md) confirmed iM3B-C DHAV and compressed H.264/AAC
+on macOS ARM64. iM3-C streaming, other firmware, relay transport, codec decoders
+and audible playback remain unverified. No account or camera access runs in CI.

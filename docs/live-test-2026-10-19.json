@@ -1,0 +1,63 @@
+{
+  "tested_at_utc": "2026-10-19T21:32:38.155444+00:00",
+  "runtime": "CPython 3.12.15",
+  "platform": "Darwin arm64",
+  "session_server_revalidated": true,
+  "vendor_runtime_used": false,
+  "media_saved": false,
+  "media_played": false,
+  "results": [
+    {
+      "model": "iM3B-C",
+      "raw_accepted": true,
+      "compressed_accepted": true,
+      "firmware": "2.800.00IB01X.0.R.240927",
+      "raw_records": {
+        "video": 45,
+        "audio": 49,
+        "assist": 0,
+        "other": 0
+      },
+      "raw_bytes": 209076,
+      "raw_seconds": 5.022,
+      "raw_route": "public",
+      "raw_closed": true,
+      "compressed_units": {
+        "h264": 1081,
+        "aac": 1165
+      },
+      "compressed_bytes": {
+        "h264": 4739431,
+        "aac": 297645
+      },
+      "compressed_seconds": 75.006,
+      "compressed_route": "public",
+      "video_counter_wraps": 1,
+      "sps_pps_idr_observed": true,
+      "compressed_closed": true,
+      "independent_h264_metadata": {
+        "codec": "h264",
+        "width": 640,
+        "height": 480
+      }
+    },
+    {
+      "model": "iM3-C",
+      "raw_accepted": false,
+      "compressed_accepted": false,
+      "firmware": "2.800.00IB00N.0.R.220624",
+      "failed_phase": "raw-dhav",
+      "error_code": "signaling-rejected",
+      "availability": "offline",
+      "signaling_stage": "initial-registration",
+      "signaling_http_like_status": 404,
+      "compatibility_conclusion": "Not established: offline at test time."
+    }
+  ],
+  "sdk_source_commit": "b3168cc",
+  "authentication_scope": "A caller-held authorized token was revalidated with signed Login and bound to its account user ID and route; fresh password/2FA acceptance was not tested.",
+  "read_only_status_diagnostic": {
+    "iM3-C": "offline",
+    "iM3B-C": "online"
+  }
+}

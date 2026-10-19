@@ -46,16 +46,22 @@ belong to the consumer.
 
 ## Compatibility and evidence
 
-| Model | Firmware | Evidence from the reference research |
+| Model | Service-reported firmware | Python live result on 2026-10-19 |
 | --- | --- | --- |
-| Intelbras iM3B-C | `2.800.00IB01X.0.R.240927` | Authorized independent reference client delivered video and audio; public candidate path observed. |
-| Intelbras iM3-C | Not recorded in the public evidence | Owner identified the older camera model; authorized reference client delivered its video over a LAN candidate. |
+| Intelbras iM3B-C | `2.800.00IB01X.0.R.240927` | Passed: raw DHAV plus 75 seconds of decrypted H.264/AAC over public P2P, with explicit local close. |
+| Intelbras iM3-C | `2.800.00IB00N.0.R.220624` | Not established: account status was offline and initial P2P registration returned 404. No media arrived. |
 
-These are **reference-client observations**, not live acceptance of this Python
-port. The Python implementation is checked with synthetic offline tests. No live
-camera test of this port has been performed. No claim is made for other firmware,
-models, account regions, NAT topologies, service changes, or audio/video playback.
-The iM3-C firmware must be recorded before making a firmware-specific claim.
+See the [live test report](docs/live-test-2026-10-19.md) and its
+[sanitized receipt](docs/live-test-2026-10-19.json). The iM3B-C run received 1,081
+H.264 units and 1,165 AAC units; independent H.264 header inspection reported
+640×480. The caller-held account token was revalidated by the server before
+fresh inventory and per-open bootstrap. Password login/2FA acceptance was not
+part of that successful media run.
+
+The iM3-C must be tested while online before claiming stream compatibility.
+Earlier LAN reference playback was another iM3B-C, not proof for iM3-C. Offline
+tests and CI remain synthetic. No claim is made for other firmware, models,
+regions, topologies, platforms, audible playback, or A/V synchronization.
 
 The implementation accepts the observed wire formats rather than guessing
 formats from a product name. An unlisted camera is not automatically compatible.
