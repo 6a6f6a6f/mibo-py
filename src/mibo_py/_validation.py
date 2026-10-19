@@ -71,7 +71,13 @@ def host(value: object) -> str:
     """Accept only observed account origins, without userinfo or extra URL parts."""
     result = text(value)
     for allowed in HOSTS:
-        if result in {allowed, f"https://{allowed}", f"https://{allowed}/"}:
+        if result in {
+            allowed,
+            f"https://{allowed}",
+            f"https://{allowed}/",
+            f"https://{allowed}:443",
+            f"https://{allowed}:443/",
+        }:
             return allowed
     fail("account-routing")
 

@@ -328,3 +328,15 @@ def test_media_and_codec_size_limits() -> None:
     with pytest.raises(MiboError):
         unwrap("AAAA", "synthetic", bytes(16))
     assert "000000" not in repr(PARAMETERS)
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "https://app-br.easy4ipcloud.com:443",
+        "https://app-br.easy4ipcloud.com:443/",
+        "https://app-sp2.easy4ipcloud.com:443/",
+    ],
+)
+def test_account_origin_accepts_explicit_default_https_port(value: str) -> None:
+    assert host(value) == value.removeprefix("https://").split(":", 1)[0]
